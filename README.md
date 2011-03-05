@@ -17,7 +17,7 @@ You step inside the booth and press a button.  A screen lights up, showing a
 a circular outline, superimposed on your head.  A few seconds later, something
 goes "bong!" and you step out.
 
-A few feet to your life, a 3D printer hums to life.  The friendly operator
+A few feet to your left, a 3D printer hums to life.  The friendly operator
 suggests that you check out the rest of the booth while your souvenir comes to
 life, but you hang out and watch.
 
