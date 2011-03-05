@@ -13,7 +13,8 @@ COIN_THICKNESS = layers(2);
 RIM_THICKNESS = layers(1);
 INSET_RADIUS = COIN_RADIUS - 2;
 
-NUM_TEETH = 90;
+NUM_TEETH = 20;
+TOOTH_SIZE = 1;
 
 //////// Coin implementation
 module coin_center() {
@@ -23,12 +24,14 @@ module coin_center() {
 
 module gear_teeth() {
 	tooth_arc = 360 / NUM_TEETH;
-	tooth_diameter = (2 * COIN_RADIUS * PI) / NUM_TEETH;
+	tooth_diameter = (2 * COIN_RADIUS * PI) / NUM_TEETH * 0.6;
 	
 	for (n = [1:NUM_TEETH]) {
 		rotate([0, 0, n * tooth_arc])
-			translate([0, COIN_RADIUS, 0])
-			cylinder(r = tooth_diameter / 2, h = COIN_THICKNESS + 2*RIM_THICKNESS, $fs = 0.1);
+			translate([-tooth_diameter/2, COIN_RADIUS - 1, 0])
+			cube([tooth_diameter,
+                  TOOTH_SIZE + 2,
+                  COIN_THICKNESS + 2*RIM_THICKNESS]);
 	}
 }
 
